@@ -1,6 +1,6 @@
 function Navbar(){
   return(
-   <nav>
+   <nav className="navbar">
     <h2>Rishi Event And Management</h2>
    </nav>
 

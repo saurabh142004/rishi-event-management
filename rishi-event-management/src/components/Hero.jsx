@@ -1,17 +1,17 @@
-function Hero(){
-  return(
-   <section>
-     <h1>Turning Your Dream Events Into Reality</h1>
+function Hero() {
+  return (
+    <section className="hero">
+      <h1>Rishi Event And Management</h1>
 
       <p>
-        Professional event planning in Kotdwara,
-        Lansdowne and Pauri Garhwal.
+        Turning Your Dream Events Into Reality
       </p>
-
+    <div className="hero-buttons">
       <button>Book Consultation</button>
-   </section>
-
+      <button>View Packages</button>
+     </div>  
+    </section>
   );
-};
+}
 
 export default Hero;

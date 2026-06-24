@@ -10,9 +10,13 @@ function Services() {
     <section>
       <h2>Our Services</h2>
 
-      {services.map((service) => (
-        <p key={service}>{service}</p>
-      ))}
+      <div className="cards">
+        {services.map((service) => (
+          <div className="card" key={service}>
+            {service}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

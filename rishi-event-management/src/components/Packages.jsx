@@ -1,25 +1,58 @@
-function Packages() {
+function Packages({ selectedPackage,setSelectedPackage, }) {
+  const packages = [
+    {
+      name: "Basic",
+      price: "₹10,000",
+      features: ["Decoration", "Lighting"],
+    },
+    {
+      name: "Standard",
+      price: "₹25,000",
+      features: ["Decoration", "Catering", "Photography"],
+    },
+    {
+      name: "Premium",
+      price: "₹50,000",
+      features: [
+        "Luxury Decoration",
+        "Catering",
+        "Photography",
+        "Full Event Management",
+      ],
+    },
+  ];
+
   return (
     <section>
-      <h2>Packages</h2>
+      <h2>Our Packages</h2>
 
-      <div>
-        <h3>Basic</h3>
-        <p>Decoration</p>
-        <p>Lighting</p>
-      </div>
+      <div className="cards">
+        {packages.map((pkg) => (
+          <div className="card" key={pkg.name}>
+            <h3>{pkg.name}</h3>
+            <h2>{pkg.price}</h2>
 
-      <div>
-        <h3>Standard</h3>
-        <p>Decoration</p>
-        <p>Catering</p>
-        <p>Photography</p>
-      </div>
+            {pkg.features.map((feature) => (
+              <p key={feature}>✓ {feature}</p>
+            ))}
+           <button
+            onClick={() => {
+              setSelectedPackage(pkg.name);
 
-      <div>
-        <h3>Premium</h3>
-        <p>Luxury Decoration</p>
-        <p>Full Event Management</p>
+              document
+                .getElementById("booking-form")
+                ?.scrollIntoView({
+                  behavior: "smooth",
+                });
+            }}
+          >
+           {selectedPackage === pkg.name
+            ? "Selected ✓"
+            : "Choose Plan"}
+          </button>
+           
+          </div>
+        ))}
       </div>
     </section>
   );
